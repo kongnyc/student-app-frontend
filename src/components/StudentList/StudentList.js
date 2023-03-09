@@ -21,6 +21,7 @@ const StudentList = ({ studentData }) => {
     if (!expanded.includes(id)) {
       // add it to a copy of the expanded array
       const newExpanded = [...expanded, id];
+      // debugger
       setExpanded(newExpanded);
     } else {
       // remove the id from a copy of the expanded array
@@ -33,6 +34,7 @@ const StudentList = ({ studentData }) => {
     // replace the expanded state with an array that has all the ids
     // (all the ids == all the ids in studentData)
     const allIds = studentData.map((student) => student.id);
+    // debugger
     setExpanded(allIds);
   };
 
@@ -56,8 +58,8 @@ const StudentList = ({ studentData }) => {
       // If the student's full name includes the searchInput, return true
       // otherwise false
       // (case insensitive)
-      const { firstName, lastName } = student;
-      const fullName = `${firstName} ${lastName}`.toLowerCase();
+      const { first_name, last_name } = student;
+      const fullName = `${first_name} ${last_name}`.toLowerCase();
 
       return fullName.includes(searchInput.toLowerCase());
     });
