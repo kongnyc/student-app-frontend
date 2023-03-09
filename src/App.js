@@ -6,6 +6,7 @@ import Loading from './components/Loading/Loading';
 import StudentList from './components/StudentList/StudentList';
 
 const API_URL = process.env.REACT_APP_API_URL;
+console.log(API_URL)
 
 function App() {
   const [studentData, setStudentData] = useState([]);
@@ -22,6 +23,7 @@ function App() {
         setLoading(true);
         const response = await fetch(`${API_URL}/students`);
         const json = await response.json();
+        // debugger;
         console.log('<App /> useEffect() fetched data', json);
         const { data, error } = json;
         if (response.ok) {
